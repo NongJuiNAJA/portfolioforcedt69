@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Statement of Purpose</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+    body { background-color:#0d1117; color:#fff; line-height:1.6; margin:0; position:relative; overflow-x:hidden; }
+
+    /* Stars Background */
+    #stars {
+      position: fixed; top:0; left:0;
+      width:100%; height:100%;
+      z-index:-2; pointer-events:none; background:transparent;
+    }
+
+    /* Navbar */
+    .navbar {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:25px 10%; background-color:#0d1117; position:sticky; top:0; z-index:1000;
+    }
+    .logo { font-size:24px; font-weight:700; }
+    .logo .blue { color:#00bfff; }
+    .nav-links { list-style:none; display:flex; gap:30px; }
+    .nav-links a { text-decoration:none; color:#fff; font-weight:500; transition:color 0.3s ease; }
+    .nav-links a:hover, .nav-links a:focus, .nav-links .active {
+      color:#00bfff; font-weight:bold; border-bottom:2px solid #00bfff;
+    }
+
+    /* About Section */
+    .about-section {
+      padding:100px 10%; background-color:rgba(15,20,26,0.9);
+      color:#fff; text-align:center; min-height:100vh; position:relative; z-index:1;
+    }
+    .about-container { max-width:900px; margin:0 auto; }
+    .about-title { font-size:42px; font-weight:700; color:#00bfff; margin-bottom:50px; }
+    .about-content { display:flex; flex-direction:column; gap:40px; text-align:left; }
+    .about-block h3 { font-size:24px; color:#00bfff; margin-bottom:15px; }
+    .about-block p { font-size:16px; line-height:1.8; color:#dddddd; }
+
+    /* Responsive */
+    @media (max-width:768px){
+      .about-content, .about-block p { text-align:center; }
+      .nav-links { flex-direction:column; gap:15px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Stars Background -->
+  <canvas id="stars"></canvas>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo"><span class="blue">Pro</span>Coder09</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">Statement of Purpose</a></li>
+        <li><a href="Portfolio.html">Portfolio</a></li>
+        <li><a href="Skill.html">Skills</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Statement of Purpose Section -->
+  <section class="about-section">
+    <div class="about-container">
+      <h2 class="about-title">Statement of Purpose</h2>
+      <div class="about-content">
+        <div class="about-block">
+          <h3>แนะนำตัวเอง</h3>
+          <p>
+            สวัสดีครับ ผมชื่อ <strong>ปวริศร จุติชัย</strong> หรือชื่อเล่น <strong>จุ้ย</strong><br>
+            ผมเริ่มสนใจด้านเทคโนโลยีตั้งแต่เด็ก ไม่ว่าจะเป็นการประกอบคอมพิวเตอร์ เล่นเกม หรือทดลองสร้างเว็บไซต์ด้วยตนเอง ความหลงใหลเหล่านี้ผลักดันให้ผมเรียนรู้การเขียนโปรแกรมผ่านการลงมือทำจริง เช่น สร้างเกมเล็ก ๆ หรือเว็บไซต์ให้กับเพื่อน ๆ<br><br>
+            ผมเชื่อว่าการเรียนรู้ด้วยความอยากรู้และสนุกกับการพัฒนาตัวเองคือแรงขับเคลื่อนที่สำคัญที่สุด
+          </p>
+        </div>
+        <div class="about-block">
+          <h3>ทำไมถึงอยากเข้าวิศวะคอมพิวเตอร์และเทคโนโลยีดิจิตัล จุฬาฯ</h3>
+          <p>
+            ผมเคยมีโอกาสได้เข้าร่วมงาน <strong>Open House ของคณะวิศวกรรมศาสตร์ จุฬาฯ</strong> และรู้สึกประทับใจในหลายด้าน ไม่ว่าจะเป็นบรรยากาศโดยรวม ความอบอุ่นของรุ่นพี่ที่เป็นกันเอง และความเชี่ยวชาญของอาจารย์ที่ให้ข้อมูลอย่างมืออาชีพ<br><br>
+            สิ่งที่ทำให้ผมมั่นใจยิ่งขึ้น คือการเห็นตัวอย่างของโครงงานจากรุ่นพี่ที่มีคุณภาพระดับสากล และสภาพแวดล้อมการเรียนรู้ที่เอื้อต่อการเติบโตทั้งด้านวิชาการและการทำงานจริง ผมรู้ทันทีว่านี่คือสถานที่ที่ผมอยากเป็นส่วนหนึ่งของมัน
+          </p>
+        </div>
+        <div class="about-block">
+          <h3>แรงบันดาลใจในการเลือกสาขาวิศวกรรมคอมพิวเตอร์และเทคโนโลยี</h3>
+          <p>
+            เทคโนโลยีคือเครื่องมือสำคัญในการแก้ปัญหาและพัฒนาโลก ผมอยากเป็นผู้มีส่วนร่วมในการสร้างระบบอัจฉริยะ ซอฟต์แวร์ หรือแพลตฟอร์มที่สามารถเปลี่ยนแปลงชีวิตของผู้คนให้ดีขึ้นได้ ไม่ว่าจะเป็นด้านการศึกษา การแพทย์ หรือสิ่งแวดล้อม<br><br>
+            ผมเชื่อว่าที่จุฬาฯ ผมจะได้เรียนรู้ทั้งด้านทฤษฎีและปฏิบัติ ได้ร่วมงานกับคนเก่ง ๆ และพัฒนาแนวคิดของตัวเองให้กลายเป็นนวัตกรรมที่ใช้ได้จริง
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script ดาวเหมือนหน้า Index -->
+  <script>
+    const canvas = document.getElementById('stars');
+    const ctx = canvas.getContext('2d');
+
+    let w = canvas.width = window.innerWidth;
+    let h = canvas.height = window.innerHeight;
+
+    const numStars = 150;
+    const stars = [];
+
+    for(let i=0;i<numStars;i++){
+      stars.push({
+        x: Math.random()*w,
+        y: Math.random()*h,
+        r: Math.random()*3 + 2,
+        dx: (Math.random()-0.5)*0.7,
+        dy: (Math.random()-0.5)*0.7
+      });
+    }
+
+    function drawStars(){
+      ctx.clearRect(0,0,w,h);
+      stars.forEach(s=>{
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+        ctx.fillStyle = "#ffffff";
+        ctx.fill();
+
+        s.x += s.dx;
+        s.y += s.dy;
+
+        if(s.x<0) s.x=w;
+        if(s.x>w) s.x=0;
+        if(s.y<0) s.y=h;
+        if(s.y>h) s.y=0;
+      });
+      requestAnimationFrame(drawStars);
+    }
+
+    drawStars();
+
+    window.addEventListener('resize', ()=>{
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+/* ========== Reset & Fonts ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #0d1117;
+  color: #ffffff;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ========== Navbar ========== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 10%;
+  background-color: #0d1117;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.logo .blue {
+  color: #00bfff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus,
+.nav-links .active {
+  color: #00bfff;
+  font-weight: bold;
+  border-bottom: 2px solid #00bfff;
+}
+
+/* ========== Hero Section ========== */
+.hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 10%;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero-text h1 span {
+  color: #00bfff;
+}
+
+.hero-text h2 {
+  font-size: 20px;
+  color: #00bfff;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  margin-bottom: 30px;
+  color: #cccccc;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #00bfff;
+  color: #0d1117;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #009fd4;
+  transform: scale(1.05);
+}
+
+/* ========== Social Icons ========== */
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  margin-right: 15px;
+  color: #ffffff;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #00bfff;
+}
+
+/* ========== Hero Image ========== */
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-image img {
+  width: 300px;
+  height: auto;
+  border-radius: 50%;
+  border: 4px solid #00bfff;
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+}
+
+/* ========== Stats Section ========== */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 60px 10%;
+  background-color: #0a0d12;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  text-align: center;
+  margin: 20px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.stat-box span {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  color: #999;
+  margin-top: 5px;
+}
+
+/* ========== About Section ========== */
+.about-section {
+  padding: 100px 10%;
+  background-color: #0f141a;
+  color: #ffffff;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #00bfff;
+  margin-bottom: 50px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  text-align: left;
+}
+
+.about-block h3 {
+  font-size: 24px;
+  color: #00bfff;
+  margin-bottom: 15px;
+}
+
+.about-block p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #dddddd;
+}
+
+/* ========== Stars Background ========== */
+#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  pointer-events: none;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+  z-index: -3;
+}
+
+header, main, section, footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image {
+    margin-top: 40px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .about-content,
+  .about-block p {
+    text-align: center;
+  }
+}

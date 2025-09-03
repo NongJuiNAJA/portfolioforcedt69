@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b0e12;
+      color: white;
+      text-align: center;
+    }
+
+    /* Navbar */
+    nav {
+      width: 100%;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0b0e12;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #00bfff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00bfff;
+    }
+
+    /* Content wrapper */
+    .content {
+      padding-top: 120px; /* กันไม่ให้ navbar บัง */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Book */
+    .book {
+      width: 707px;   /* ย่อครึ่งของ 1414x2000 */
+      height: 1000px;
+      perspective: 2000px;
+      position: relative;
+    }
+
+    .page {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform-origin: left;
+      transition: transform 1s;
+      background: white;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      overflow: hidden;
+    }
+
+    .page img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .controls {
+      margin-top: 20px;
+      width: 707px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .controls button {
+      background: #00bfff;
+      border: none;
+      color: white;
+      font-size: 18px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .controls button:hover {
+      background: #0099cc;
+    }
+
+    .flipped {
+      transform: rotateY(-180deg);
+    }
+
+    /* Credit Section */
+    .credit {
+      margin-top: 80px;
+      font-size: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .credit a img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s;
+    }
+
+    .credit a img:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Navbar -->
+  <nav>
+    <div class="logo">Portfolio</div>
+    <ul>
+      <li><a href="Index.html">Home</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="Portfolio.html">Portfolio</a></li>
+      <li><a href="Skill.html">Skills</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ✅ Content -->
+  <div class="content">
+    <!-- Book Effect -->
+    <div class="book" id="book">
+      <!-- เปลี่ยนชื่อรูปให้ตรงกับไฟล์จริงของคุณ -->
+      <div class="page"><img src="1.jpg" alt="Page 1"></div>
+      <div class="page"><img src="2.jpg" alt="Page 2"></div>
+      <div class="page"><img src="3.jpg" alt="Page 3"></div>
+      <div class="page"><img src="4.jpg" alt="Page 4"></div>
+      <div class="page"><img src="5.jpg" alt="Page 5"></div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button id="prevBtn">⬅ Prev</button>
+      <button id="nextBtn">Next ➡</button>
+    </div>
+
+    <!-- ✅ Credit Section -->
+    <div class="credit">
+      <p>Credit: The Code Wizard</p>
+      <a href="https://www.instagram.com/the_coding_wizard/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram Logo">
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const pages = document.querySelectorAll(".page");
+    let current = 0;
+
+    // จัด z-index ให้เรียงหน้าไม่ซ้อนผิด
+    pages.forEach((page, index) => {
+      page.style.zIndex = pages.length - index;
+    });
+
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      if (current < pages.length) {
+        pages[current].classList.add("flipped");
+        current++;
+      }
+    });
+
+    document.getElementById("prevBtn").addEventListener("click", () => {
+      if (current > 0) {
+        current--;
+        pages[current].classList.remove("flipped");
+      }
+    });
+  </script>
+
+</body>
+</html>

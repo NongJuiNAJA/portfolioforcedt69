@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ดวงดาว (อยู่ด้านหลังสุด) -->
+  <canvas id="stars"></canvas>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo"><span class="blue">Port</span>folio</div>
+      <ul class="nav-links">
+        <li><a href="Index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Portfolio.html">Portfolio</a></li>
+        <li><a href="Skill.html">Skills</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="hero-section">
+    <div class="hero-text">
+      <h1>
+        สวัสดีครับ<br>
+        <span>ผมนายปวริศร จุติชัย</span>
+      </h1>
+      <h2>
+        <span class="highlight">นี่คือเว็บพอร์ตโฟลิโอของผมสำหรับยื่นมหาลัย</span>
+      </h2>
+      <p>
+        สวัสดีครับ ผมคือผู้ที่หลงใหลในโลกของการเขียนโปรแกรม การพัฒนาเว็บไซต์ และเทคโนโลยีสมัยใหม่<br>
+        นี่คือผลงานบางส่วนที่ผมได้สร้างขึ้นด้วยความตั้งใจ เพื่อใช้ยื่นสมัครเข้าศึกษาต่อในระดับมหาวิทยาลัย
+      </p>
+      <a href="Portfolio.html" class="btn">ดูผลงานของฉัน</a>
+
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="NongJui.png" alt="ปวริศร จุติชัย" />
+    </div>
+  </main>
+
+  <!-- Stats Footer -->
+  <footer class="stats">
+    <div class="stat-box">
+      ดี<br>
+      <span>Programming Skill
+    </div>
+    <div class="stat-box">
+      ดี<br>
+      <span>Leadership</span>
+    </div>
+    <div class="stat-box">
+      ดีเยี่ยม<br>
+      <span>Problem Solving</span>
+    </div>
+    <div class="stat-box">
+      ดีเยี่ยม<br>
+      <span>Critical Thinking/span>
+    </div>
+  </footer>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- Script วาดดาว -->
+  <script>
+    const canvas = document.getElementById('stars');
+    const ctx = canvas.getContext('2d');
+
+    let w = canvas.width = window.innerWidth;
+    let h = canvas.height = window.innerHeight;
+
+    const numStars = 100;
+    const stars = [];
+    for(let i=0;i<numStars;i++){
+      stars.push({
+        x: Math.random()*w,
+        y: Math.random()*h,
+        r: Math.random()*2+1,
+        dx: (Math.random()-0.5)*0.2,
+        dy: (Math.random()-0.5)*0.2
+      });
+    }
+
+    function drawStars(){
+      ctx.clearRect(0,0,w,h);
+      ctx.fillStyle = "#ffffff";
+      stars.forEach(s=>{
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+        ctx.fill();
+        s.x += s.dx;
+        s.y += s.dy;
+        if(s.x<0) s.x = w;
+        if(s.x>w) s.x = 0;
+        if(s.y<0) s.y = h;
+        if(s.y>h) s.y = 0;
+      });
+      requestAnimationFrame(drawStars);
+    }
+    drawStars();
+
+    window.addEventListener('resize',()=>{
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    });
+  </script>
+
+</body>
+</html>

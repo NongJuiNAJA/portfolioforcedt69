@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+    body { background-color:#0d1117; color:#fff; line-height:1.6; overflow-x:hidden; }
+
+    /* Navbar */
+    .navbar {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:20px 10%; background-color:#0d1117; position:sticky; top:0; z-index:1000;
+    }
+    .logo { font-size:24px; font-weight:700; }
+    .logo .blue { color:#00bfff; }
+    .nav-links { list-style:none; display:flex; gap:30px; }
+    .nav-links a { text-decoration:none; color:#fff; font-weight:500; transition:color 0.3s ease; }
+    .nav-links a:hover, .nav-links a:focus, .nav-links .active { color:#00bfff; font-weight:bold; border-bottom:2px solid #00bfff; }
+
+    /* Skills Section */
+    .skills-section {
+      padding:80px 10%; min-height:100vh; text-align:center;
+    }
+    .skills-title { font-size:42px; font-weight:700; color:#00bfff; margin-bottom:50px; }
+    .skills-container {
+      display:grid; grid-template-columns:repeat(3, 1fr); gap:30px; max-width:1200px; margin:0 auto;
+    }
+    .skill-card {
+      background-color:#1c1f26; border-radius:15px; overflow:hidden; cursor:pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .skill-card:hover { transform:scale(1.05); box-shadow:0 0 20px #00bfff; }
+    .skill-card img { width:80px; height:80px; margin:20px auto 10px; display:block; object-fit:contain; }
+    .skill-card h3 { font-size:24px; color:#00bfff; margin:10px 0; }
+    .skill-card p { font-size:16px; color:#ddd; padding:0 20px 20px; display:none; }
+
+    /* Modal */
+    .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:2000; }
+    .modal-content { background:#1c1f26; padding:30px; border-radius:15px; max-width:500px; text-align:left; position:relative; color:#fff; }
+    .close-btn { position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer; color:#00bfff; }
+
+    /* Responsive */
+    @media (max-width:900px) { .skills-container { grid-template-columns:1fr 1fr; gap:20px; } }
+    @media (max-width:600px) { .skills-container { grid-template-columns:1fr; gap:20px; } }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo"><span class="blue">Port</span>folio</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Statement of Purpose</a></li>
+        <li><a href="Portfolio.html">Portfolio</a></li>
+        <li><a href="Skill.html" class="active">Skills</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Skills Section -->
+  <section class="skills-section">
+    <h2 class="skills-title">My Skills</h2>
+    <div class="skills-container">
+      <!-- Skill Card -->
+      <div class="skill-card" onclick="openModal('Python', 'Python เป็นภาษาการเขียนโปรแกรมที่ผมเชี่ยวชาญและชอบใช้งาน เนื่องจากมีความยืดหยุ่นสูง เหมาะสำหรับการพัฒนาเว็บไซต์ การวิเคราะห์ข้อมูล การสร้างระบบอัตโนมัติ และ AI/ML')">
+        <img src="p.jpg" alt="Python">
+        <h3>Python</h3>
+      </div>
+      <div class="skill-card" onclick="openModal('C Language', 'ภาษา C เป็นภาษาพื้นฐานที่ผมเรียนรู้มาตั้งแต่เริ่มเขียนโปรแกรม ช่วยให้เข้าใจแนวคิดเกี่ยวกับโครงสร้างข้อมูลพื้นฐาน และทำให้ผมสามารถต่อยอดไปหลายๆอย่างได้ง่ายขึ้นมาก')">
+        <img src="c.png" alt="C Language">
+        <h3>C Language</h3>
+      </div>
+      <div class="skill-card" onclick="openModal('C#/Unity', 'ผมสามารถใช้ C# เขียนเกมบน Unity ได้ ทำให้สร้างเกมเล็ก ๆ ทดลองระบบต่าง ๆ ได้เอง ทั้งการควบคุมตัวละคร การโต้ตอบกับผู้เล่น และการทำกราฟิกพื้นฐาน ถึงจะยังไม่สามารถสร้างเกมที่สมบูรณ์ได้แต่จะพัฒนาต่อไปครับ')">
+        <img src="u.jpg" alt="Unity">
+        <h3>C#/Unity</h3>
+      </div>
+      <div class="skill-card" onclick="openModal('Critical Thinking', 'ผมชอบวิเคราะห์ปัญหาและคิดหาวิธีแก้ไขหลาย ๆ แบบก่อนลงมือทำ ทำให้ตัดสินใจได้เร็วและแม่นยำขึ้น')">
+        <img src="t.jpg" alt="Critical Thinking">
+        <h3>Critical Thinking</h3>
+      </div>
+      <div class="skill-card" onclick="openModal('Adaptability', 'ผมปรับตัวเข้ากับสถานการณ์ใหม่ ๆ ได้ดี ไม่ว่าจะเป็นการใช้เครื่องมือใหม่ ๆ หรือทำงานในทีมที่เปลี่ยนแปลงบ่อย')">
+        <img src="a.jpg" alt="Adaptability">
+        <h3>Adaptability</h3>
+      </div>
+      <div class="skill-card" onclick="openModal('Basketball', 'ผมเล่นบาสช่วยฝึกความร่วมมือกับเพื่อนในทีม การวางแผน และความอดทน ทำให้ทำงานร่วมกับคนอื่นได้ดีขึ้น และเป็นก่ารออกกำลังก่ยไปในตัวอีกด้วย')">
+        <img src="b.jpg" alt="Basketball">
+        <h3>Basketball</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h3 id="modalTitle"></h3>
+      <p id="modalText"></p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(title, text){
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalText').innerText = text;
+      document.getElementById('modal').style.display = 'flex';
+    }
+    function closeModal(){
+      document.getElementById('modal').style.display = 'none';
+    }
+    window.addEventListener('click', function(e){
+      if(e.target == document.getElementById('modal')) closeModal();
+    });
+  </script>
+
+</body>
+</html>
