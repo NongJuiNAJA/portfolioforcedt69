@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | My Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background-color: #0d1117;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background-color: #111827;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .logo .blue {
+      color: #4da6ff;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: #4da6ff;
+      font-weight: 600;
+    }
+
+    /* Main Contact Section */
+    .contact-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 30px;
+      padding: 50px 20px;
+    }
+
+    .contact-body h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    /* Social & Email box */
+    .contact-box {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      background-color: rgba(17, 24, 39, 0.9);
+      padding: 40px 60px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .social-icons a {
+      font-size: 2.5rem;
+      color: #fff;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #4da6ff;
+      transform: scale(1.2);
+    }
+
+    .email a {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .email a:hover {
+      color: #4da6ff;
+      transform: scale(1.05);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .contact-box {
+        padding: 30px 20px;
+        gap: 25px;
+      }
+
+      .social-icons a {
+        font-size: 2rem;
+      }
+
+      .email a {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo"><span class="blue">Port</span>folio</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Portfolio.html">Portfolio</a></li>
+        <li><a href="Skill.html">Skills</a></li>
+        <li><a href="Contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Contact Body -->
+  <main class="contact-body">
+    <h1>ติดต่อผม</h1>
+    <div class="contact-box">
+      <div class="social-icons">
+        <a href="https://www.facebook.com/pravaris.jutichai" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/who.is.jui/" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="email">
+        <a href="mailto:pravarison.jut@gmail.com">pravarison.jut@gmail.com</a>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
